@@ -1,0 +1,24 @@
+PEQUEÑOS APRENDEN EN GRANDE - RULETA DE AUDIOCUENTOS
+6to año Informática - IPEM 335
+
+CÓMO USAR
+1. Descomprimir el archivo ZIP completo.
+2. Mantener las carpetas cuentos y videos dentro de la carpeta principal.
+3. Abrir index.html con Chrome, Edge o Firefox.
+4. Presionar GIRAR LA RULETA. Al terminar el giro, se abrirá el cuento elegido.
+5. Presionar ▶ en el reproductor para escuchar el video.
+6. Usar VOLVER A LA RULETA para elegir otro cuento.
+
+ARCHIVOS
+- index.html: página de inicio y ruleta.
+- style.css: diseño, animación y adaptación a distintas pantallas.
+- script.js: selección aleatoria, giro y navegación.
+- cuentos/*.html: páginas individuales de los cuatro cuentos.
+- videos/*.mp4: videos originales descargados (no requieren Google Drive).
+
+IMPORTANTE
+- No abrir el HTML directamente desde dentro del ZIP; primero descomprimir.
+- No cambiar los nombres de archivos ni carpetas sin actualizar las rutas del código.
+- Los navegadores suelen impedir la reproducción automática con sonido. Por eso,
+  al abrir el cuento se muestra el reproductor con su botón de reproducción.
+- La fuente de Google Fonts es opcional; los videos funcionan sin conexión.

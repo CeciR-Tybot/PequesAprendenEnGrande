@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pequeños aprenden en grande - Ruleta de cuentos</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main class="contenedor">
+        <header>
+            <p class="subtitulo">RULETA DE AUDIOCUENTOS</p>
+            <h1>PEQUEÑOS APRENDEN EN GRANDE</h1>
+            <p class="descripcion">Girá la ruleta y descubrí qué historia te espera.</p>
+        </header>
+
+        <div class="adorno">━━━━━━━━━━━━━━━━</div>
+
+        <section class="zona-ruleta" aria-label="Ruleta con cuatro cuentos">
+            <div class="puntero"></div>
+            <div class="ruleta" id="ruleta">
+                <div class="numero n1">1</div>
+                <div class="numero n2">2</div>
+                <div class="numero n3">3</div>
+                <div class="numero n4">4</div>
+                <div class="centro"><span>CUENTOS</span></div>
+            </div>
+        </section>
+
+        <button id="botonGirar" onclick="girarRuleta()">GIRAR LA RULETA</button>
+        <div class="resultado" id="resultado" aria-live="polite">
+            Tu próxima historia te espera.
+        </div>
+        <a id="linkCuento" class="boton-cuento" href="#" style="display: none;">
+            ABRIR CUENTO
+        </a>
+
+        <div class="adorno">━━━━━━━━━━━━━━━━</div>
+        <footer>6to año Informática - IPEM 335</footer>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
