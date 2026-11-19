@@ -1,3 +1,4 @@
+
 const ruleta = document.getElementById("ruleta");
 const boton = document.getElementById("botonGirar");
 const resultado = document.getElementById("resultado");
@@ -46,17 +47,19 @@ function girarRuleta() {
     vueltas += 360 * 6 + ajuste;
     ruleta.style.transform = `rotate(${vueltas}deg)`;
 
-    // La animación de la ruleta dura cinco segundos (ver style.css).
+    // Esperar a que termine la animación.
     setTimeout(() => {
-        resultado.innerHTML = `EL CUENTO ELEGIDO ES EL NÚMERO ${numero}<br>${cuentos[numero].titulo}`;
+        resultado.innerHTML =
+            `EL CUENTO ELEGIDO ES EL NÚMERO ${numero}<br>${cuentos[numero].titulo}`;
+
+        // Preparar el enlace del cuento elegido.
         linkCuento.href = cuentos[numero].enlace;
         linkCuento.style.display = "block";
+
         boton.disabled = false;
         girando = false;
 
-        // Abrir automáticamente la página del cuento seleccionado.
-        setTimeout(() => {
-            window.location.href = cuentos[numero].enlace;
-        }, 1000);
+        // La página se abrirá solamente al presionar ABRIR CUENTO.
     }, 5100);
 }
+
