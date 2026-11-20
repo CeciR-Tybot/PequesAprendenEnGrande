@@ -1,0 +1,265 @@
+/* ESTILOS GENERALES: se mantiene la estética original del grupo. */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    min-height: 100dvh;
+    background:
+        radial-gradient(circle at top left, #d99ba4, transparent 40%),
+        radial-gradient(circle at bottom right, #a64f64, transparent 40%),
+        #bd7785;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: clamp(8px, 1.5vh, 20px);
+}
+
+.contenedor {
+    width: 100%;
+    max-width: 650px;
+    background: #fff4e9;
+    border: 5px double #c79b59;
+    border-radius: 30px;
+    padding: clamp(10px, 2vh, 22px) 20px;
+    text-align: center;
+    box-shadow:
+        0 15px 40px rgba(65, 20, 35, 0.3),
+        0 0 0 10px rgba(255, 255, 255, 0.15);
+}
+
+header { margin-bottom: 5px; }
+
+.subtitulo {
+    color: #ae7951;
+    letter-spacing: 3px;
+    font-size: clamp(10px, 1.6vh, 12px);
+    font-weight: 600;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(23px, 4.4vh, 42px);
+    color: #792d43;
+    margin: 5px 0;
+    line-height: 1.15;
+}
+
+.descripcion {
+    color: #91636c;
+    font-size: clamp(12px, 1.8vh, 14px);
+}
+
+.adorno {
+    color: #c69b60;
+    letter-spacing: 3px;
+    margin: clamp(5px, 1vh, 12px) 0;
+    font-size: 13px;
+}
+
+/* RULETA: tamaño adaptado a la altura y al ancho de la pantalla. */
+.zona-ruleta {
+    width: min(340px, 40dvh, 76vw);
+    aspect-ratio: 1 / 1;
+    margin: clamp(8px, 1.8vh, 18px) auto;
+    position: relative;
+}
+
+.ruleta {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    border: clamp(5px, 1.2vh, 10px) solid #d3aa6c;
+    background: conic-gradient(
+        #87334b 0deg 90deg,
+        #e5a4ae 90deg 180deg,
+        #a64c65 180deg 270deg,
+        #e8c58d 270deg 360deg
+    );
+    box-shadow:
+        0 0 0 5px #f5dfbd,
+        0 12px 25px rgba(80, 30, 40, 0.3);
+    transition: transform 5s cubic-bezier(0.15, 0.7, 0.15, 1);
+}
+
+/* Los números están en el centro de cada sector, no sobre los bordes. */
+.numero {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    color: #fff9ef;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(17px, 3.5vh, 34px);
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(50, 15, 25, 0.5);
+}
+.n1 { top: 25%; left: 75%; }
+.n2 { top: 75%; left: 75%; }
+.n3 { top: 75%; left: 25%; }
+.n4 { top: 25%; left: 25%; }
+
+.centro {
+    position: absolute;
+    width: clamp(42px, 9vh, 76px);
+    height: clamp(42px, 9vh, 76px);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: #fff0d9;
+    border: 5px solid #c49a5d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+    box-shadow: 0 3px 10px rgba(60, 20, 30, 0.3);
+}
+.centro span {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(8px, 1.3vh, 11px);
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #80364b;
+}
+
+.puntero {
+    position: absolute;
+    z-index: 5;
+    top: -17px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 30px solid #80334a;
+    filter: drop-shadow(0 3px 2px #c69b60);
+}
+
+button {
+    padding: clamp(9px, 1.6vh, 15px) 35px;
+    background: linear-gradient(135deg, #87334b, #b95770, #87334b);
+    border: 3px solid #d7b477;
+    border-radius: 40px;
+    color: #fff5e9;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: clamp(12px, 1.8vh, 14px);
+    letter-spacing: 2px;
+    cursor: pointer;
+    box-shadow: 0 6px 0 #632638;
+    transition: 0.3s;
+}
+button:hover {
+    background: linear-gradient(135deg, #a64b63, #d17e8c);
+    transform: translateY(-3px);
+}
+button:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.resultado {
+    min-height: 42px;
+    margin-top: clamp(6px, 1.2vh, 12px);
+    color: #85394f;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(15px, 2.5vh, 20px);
+    font-weight: 600;
+}
+
+.boton-cuento {
+    display: none;
+    width: fit-content;
+    margin: 8px auto;
+    padding: 9px 20px;
+    background: linear-gradient(135deg, #87334b, #b95770);
+    border: 3px solid #d7b477;
+    border-radius: 35px;
+    color: #fff5e9;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 12px;
+    letter-spacing: 2px;
+    box-shadow: 0 5px 0 #632638;
+}
+.boton-cuento:hover { background: #a64b63; }
+
+footer {
+    color: #aa8056;
+    font-size: clamp(10px, 1.5vh, 12px);
+    letter-spacing: 1px;
+    margin-top: 6px;
+}
+
+/* PÁGINAS DE LOS AUDIOCUENTOS */
+.pagina-cuento .subtitulo { letter-spacing: 2px; }
+.pagina-cuento h1 { font-size: clamp(25px, 5vh, 42px); }
+.historia {
+    background: #f8e7df;
+    border: 2px solid #d7b477;
+    border-radius: 20px;
+    padding: clamp(12px, 2vh, 20px);
+    margin: 12px 0;
+    color: #753044;
+    line-height: 1.5;
+}
+.historia h2 {
+    font-family: 'Playfair Display', serif;
+    color: #87334b;
+    margin-bottom: 8px;
+}
+.titulo-video {
+    font-family: 'Playfair Display', serif;
+    color: #792d43;
+    margin: 10px 0 5px;
+}
+.video-contenedor {
+    width: 100%;
+    max-width: min(500px, 65dvh);
+    aspect-ratio: 16 / 9;
+    margin: 12px auto;
+}
+.video-contenedor video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #24131a;
+    border: 4px solid #d7b477;
+    border-radius: 15px;
+}
+.volver {
+    display: block;
+    margin: 12px auto 8px;
+    color: #87334b;
+    font-weight: bold;
+    text-decoration: none;
+}
+.volver:hover { color: #c49a5d; }
+
+/* Ajustes para pantallas chicas y ventanas bajas. */
+@media (max-width: 480px) {
+    .contenedor { padding: 14px 12px; }
+    .zona-ruleta { width: min(300px, 37dvh, 76vw); }
+    button { padding: 11px 24px; }
+    .adorno { letter-spacing: 1px; }
+}
+@media (max-height: 570px) {
+    .contenedor { padding: 7px 12px; border-radius: 18px; }
+    .zona-ruleta { width: min(32dvh, 65vw); margin: 4px auto; }
+    .adorno { margin: 2px 0; font-size: 10px; }
+    header { margin-bottom: 1px; }
+    h1 { font-size: clamp(18px, 4.5vh, 28px); margin: 2px 0; }
+    .descripcion { font-size: 11px; }
+    button { padding: 6px 18px; font-size: 11px; }
+    .resultado { min-height: 24px; margin-top: 4px; font-size: 13px; }
+    footer { margin-top: 2px; font-size: 10px; }
+    .pagina-cuento .historia { padding: 5px; margin: 5px 0; }
+    .pagina-cuento .historia h2 { font-size: 16px; margin-bottom: 2px; }
+    .pagina-cuento .historia p { font-size: 11px; }
+    .pagina-cuento .titulo-video { font-size: 16px; margin: 4px 0; }
+    .pagina-cuento .video-contenedor { max-width: min(400px, 40dvh); margin: 5px auto; }
+    .pagina-cuento .volver { margin: 5px auto; font-size: 11px; }
+}
